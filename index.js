@@ -238,5 +238,85 @@
 //     box.style.backgroundColor="white";
 // });
 
+let playerScore=0;
+let compScore=0;
+
+choices=document.querySelectorAll(".choice");
+
+const gencompChoice=()=>{
+    const options=["rock","paper","scissors"];
+    const randIdx=Math.floor(Math.random()*3);
+    return options[randIdx];
+}
+
+const drawGame=()=>{
+   console.log("Draw");
+
+}
+
+const playGame=(userChoice)=>{
+    console.log("user choice=",userChoice);
+    const compChoice=gencompChoice();
+    console.log("comp choice=",compChoice);
+    if (compChoice===userChoice){
+        drawGame();
+    }
+    else{
+        let userwin=true;
+        if(userChoice==="rock"){
+            userwin= compChoice==="paper"? false:true;
+        }
+        else if(userChoice==="paper"){
+            userwin=compChoice==="scissors"? false:true;
+        }
+        else{
+            userwin=compChoice==="rock"? false:true;
+        }
+        end(userwin);
+    }
+    
+
+    // else if(userChoice==="rock"&&compChoice==="paper"){
+    //     console.log("comp wins");
+    // }
+    // else if(userChoice==="paper"&& compChoice==="rock"){
+    //     console.log("player wins");
+    // }
+    // else if(userChoice==="scissors"&& compChoice==="rock"){
+    //     console.log("comp wins");
+    // }
+    // else if(userChoice==="paper"&&compChoice==="scissors"){
+    // console.log("comp wins");
+    // }
+    // else if(userChoice==="rock"&&compChoice==="scissors"){
+    //     console.log("player wins");
+    // }
+    // else if(userChoice==="scissors"&&compChoice==="paper"){
+    //     console.log("player wins");
+    // }
+    
+}
+
+const end=(userwin)=>{
+    if (userwin){
+        console.log("user wins lol");
+       }
+       else{
+        console.log("computer wins");
+       }
+}
+
+
+choices.forEach((choice)=>{
+    choice.addEventListener("click",()=>{
+        const userChoice=choice.getAttribute("id");
+        playGame(userChoice);
+        
+        
+    });
+
+    
+});
+
 
 
