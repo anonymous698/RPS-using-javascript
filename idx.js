@@ -123,7 +123,7 @@ const gencompChoice=()=>{
     return options[randIdx];
 }
 const drawGame=(userChoice)=>{
-    console.log("Draw.");
+    // console.log("Draw.");
     msg.innerText=` It's a Draw. You both chose ${userChoice}.`
     msg.style.backgroundColor="yellow";
     msg.style.color="black";
@@ -133,7 +133,7 @@ const result=(userWin,userChoice,compChoice)=>{
     if (userWin){
         userScore++;
         Uscore.innerText=userScore;
-        console.log("You win");
+        // console.log("You win");
         msg.innerText=` You win. your ${userChoice} beats ${compChoice}.`;
         msg.style.backgroundColor="green";
         msg.style.color="white";
@@ -141,7 +141,7 @@ const result=(userWin,userChoice,compChoice)=>{
     else{
         compScore++;
         Cscore.innerText=compScore;
-        console.log("You lost");
+        // console.log("You lost");
         msg.innerText=` You lose. ${compChoice} beats your ${userChoice}.`;
         msg.style.backgroundColor="red";
         msg.style.color="white";
@@ -171,8 +171,8 @@ const WorL=(compChoice,userChoice)=>{
 
 const playGame=(userChoice)=>{
     const compChoice=gencompChoice();
-    console.log("player=",userChoice);
-    console.log("computer=",compChoice);
+    // console.log("player=",userChoice);
+    // console.log("computer=",compChoice);
     WorL(compChoice,userChoice);
     
 }
